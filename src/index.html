@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="side-bar">
+            <div class="filters">
+                <button type="button" class="today">Today</button>
+                <button type="button" class="all">Upcoming</button>
+                <button type="button" class="done">Completed</button>
+            </div>
+            <div class="project-list">
+                <h2>My Projects</h2>
+                <form class="project-form">
+                    <input type="text" id="project-name" name="project-name" required>
+                    <button type="submit" class="submit-project">Add</button>
+                </form>
+                <div class="project-buttons"></div>
+            </div>
+        </div>
+        <div class="project-container">
+            <h1 class="project-title"></h1>
+        </div>
+    </div>
+
+
+    <dialog class="center">
+        <form method="dialog" class="task-form">
+            <button type="button" class="exit-form">X</button>
+            <input type="text" name="title" id="title" placeholder="Task Name" required>
+            <input type="text" name="desc" id="desc" placeholder="Description">
+            <input type="date" name="date" id="date" required>
+            <select name="prio" id="prio">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low" selected>Low</option>
+            </select>
+            <select name="project-selection" id="project-selection"></select>
+            <button type="submit" class="submit-form">Add Task</button> 
+        </form>
+    </dialog>
+</body>
+
+</html>

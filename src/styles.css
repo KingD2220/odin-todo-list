@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.project-container > button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* FORM */
+dialog {
+    border: none;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
