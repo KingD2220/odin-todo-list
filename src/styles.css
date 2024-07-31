@@ -2,28 +2,311 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', serif;
+    color: var(--font);
+}
+
+:root {
+    --side: #27272a;
+    --main: #18181b;
+    --accent: #3f3f46;
+    --highlight: #52525b;
+    --font-darkest: #a1a1aa;
+    --font: #f4f4f5;
+    --font-light: #fafafa;
+    --font-dark: #d4d4d8;
+    --low: #93c5fd;
+    --medium: #fde047;
+    --high: #fca5a5;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--accent);
 }
 
 .main-container {
+    position: relative;
+    min-width: 900px;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 4.5fr;
 }
 
-.project-container > button{
+/* SIDE BAR */
+
+.side-bar {
+    height: 100vh;
+    padding: 20px 20px 0 20px;
+    background-color: var(--side);
+    min-width: 300px;
+}
+
+.filters {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-bottom: 35px;
+}
+
+.filters>button,
+.project-buttons>button {
+    display: flex;
+    gap: 10px;
+    text-align: left;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 0 15px 20px;
+}
+
+.project-buttons>button {
+    width: 100%;
+}
+
+.filters>button:hover,
+.project-buttons>button:hover {
+    background-color: var(--accent);
+}
+
+.project-list {
+    margin-top: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    font-size: 1.7rem;
+}
+
+.project-form {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.project-form input {
+    border-radius: 20px;
+    border: none;
+    height: 40px;
+    width: 80%;
+    background-color: var(--accent);
+    margin-top: 5px;
+    margin-right: 10px;
+    font-size: 1rem;
+    padding-left: 15px;
+    font-size: 1.2rem;
+}
+
+.submit-project {
+    font-size: 1.5rem;
+    color: #d4d4d8;
+}
+
+.submit-project:hover {
+    color: var(--font-light);
+    background: none;
+}
+
+.project-buttons>button {
+    font-size: 1.5rem;
+}
+
+.project-button {
+    position: relative;
+}
+
+.delete-project {
     position: absolute;
     right: 10px;
-    top: 10px;
+}
+
+/* PROJECT DISPLAY */
+
+.main-wrapper {
+    background-color: var(--main);
+    display: flex;
+    justify-content: center;
+}
+
+.project-container {
+    margin-top: 50px;
+    width: min(1200px, 90%);
+    min-width: 500px;
+}
+
+.project-container>h1 {
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+.desc {
+    font-size: 1rem;
+    color: var(--font-dark);
+    padding-left: 5px;
+}
+
+.low .date {
+    color: var(--low);
+}
+
+.medium .date {
+    color: var(--medium);
+}
+
+.high .date {
+    color: var(--high);
+}
+
+.item {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--accent);
+    margin: 5px;
+}
+
+.item-left {
+    display: flex;
+    gap: 15px;
+}
+
+.item-right,
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-right {
+    align-items: flex-end;
+}
+
+.item-right p {
+    color: var(--font-dark);
+}
+
+.item-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.add-task {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    right: 40px;
+    top: 30px;
+    padding: 10px 25px 10px 17px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+}
+
+button>img,
+.edit,
+.delete {
+    width: 30px;
+    height: 30px;
+}
+
+img {
+    filter: invert(100%) sepia(10%) saturate(614%) hue-rotate(180deg) brightness(99%) contrast(95%);
+}
+
+.empty-message {
+    font-size: 1.1rem;
+    color: var(--font-darkest);
 }
 
 /* FORM */
 dialog {
     border: none;
+    background: none;
 }
 
 dialog form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
+    height: 550px;
+    width: 700px;
+    background: var(--accent);
+    border-radius: 20px;
+}
+
+dialog form input,
+dialog form select,
+textarea {
+    color: var(--font);
+    width: 80%;
+    height: 40px;
+    font-size: 1.05rem;
+    padding-left: 10px;
+    padding-right: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--highlight);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+input[name="title"] {
+    height: 45px;
+    font-size: 1.2rem;
+}
+
+#prio,
+#project-selection {
+    color: var(--font);
+}
+
+textarea {
+    height: 100px;
+    padding-top: 10px;
+    font-size: 1rem;
+}
+
+dialog form select {
+    color: black;
+}
+
+.form-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.submit-form,
+.exit-form {
+    background-color: #60a5fa;
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 110px;
+    height: 50px;
+    border-radius: 7px;
+}
+
+.exit-form {
+    background-color: var(--highlight);
+}
+
+.submit-form:hover {
+    background-color: var(--low);
 }
 
 .center {
@@ -31,4 +314,58 @@ dialog form {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* CHECKBOX */
+
+.checkbox-wrapper-18 .round {
+    position: relative;
+}
+
+.checkbox-wrapper-18 .round label {
+    background-color: var(--main);
+    border: 1px solid var(--highlight);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    width: 28px;
+    display: block;
+}
+
+.checkbox-wrapper-18 .round label:hover {
+    background-color: var(--side);
+}
+
+.checkbox-wrapper-18 .round label:after {
+    border: 2px solid var(--font);
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 8px;
+    opacity: 0;
+    position: absolute;
+    top: 9px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+
+.checkbox-wrapper-18 .round input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+}
+
+.checkbox-wrapper-18 .round input[type="checkbox"]:checked+label {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+}
+
+.checkbox-wrapper-18 .round input[type="checkbox"]:checked+label:after {
+    opacity: 1;
+}
+
+.checkbox-wrapper-18 .round input[type="checkbox"]:checked+label:hover {
+    background-color: #66bb6ada;
+    border-color: #66bb6ada;
 }
