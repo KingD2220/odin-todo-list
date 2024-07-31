@@ -305,6 +305,10 @@ dialog form select {
     background-color: var(--highlight);
 }
 
+.exit-form:hover {
+    background-color: #71717a;
+}
+
 .submit-form:hover {
     background-color: var(--low);
 }
