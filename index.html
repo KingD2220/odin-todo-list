@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+<script defer src="main.js"></script></head>
+
+<body>
+    <div class="main-container">
+        <div class="side-bar">
+            <div class="filters">
+                <button type="button" class="today">
+                    <img src="3faae0cf01e4ecd160ef.svg" alt="Add Icon" class="today"/>
+                    <span class="today">Today</span>
+                </button>
+                <button type="button" class="upcoming">
+                    <img src="18f552623324e58156e6.svg" alt="Add Icon" class="upcoming"/>
+                    <span class="upcoming">Upcoming</span>
+                </button>
+                <button type="button" class="completed">
+                    <img src="7baf356d9dec3605f26c.svg" alt="Add Icon" class="completed"/>
+                    <span class="completed">Completed</span>
+                </button>
+            </div>
+            <div class="project-list">
+                <h2>Projects</h2>
+                <form class="project-form">
+                    <input type="text" id="project-name" name="project-name" required>
+                    <button type="submit" class="submit-project">+</button>
+                </form>
+                <div class="project-buttons"></div>
+            </div>
+        </div>
+        <div class="main-wrapper">
+            <div class="project-container">
+            </div>
+        </div>
+        
+        <button type="button" class="add-task">
+            <img src="3cffe9a515498593b872.svg" alt="Add Icon"/>
+            <span>Add Task</span>
+        </button>
+    </div>
+
+
+    <dialog class="center">
+        <form method="dialog" class="task-form">
+            <input type="text" name="title" id="title" placeholder="Task Name" required>
+            <textarea name="desc" id="desc" placeholder="Description (optional)"></textarea>
+            <input type="date" name="date" id="date" required>
+            <select name="prio" id="prio">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low" selected>Low</option>
+            </select>
+            <select name="project-selection" id="project-selection"></select>
+            <div class="form-buttons">
+                <button type="submit" class="submit-form">Add Task</button>
+                <button type="button" class="exit-form">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+
+</html>
