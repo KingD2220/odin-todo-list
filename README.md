@@ -1,2 +1,2 @@
 # odin-todo-list
-Functional todo list web app using CSS, HTML and Javascript
+Functional todo list web app using Javascript, CSS and HTML.
